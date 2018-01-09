@@ -2,7 +2,7 @@
     "name": "laml-highlighter",
     "displayName": "laml-highlighter",
     "description": "This extension provides a syntax highlighter of laml code.",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "publisher": "yuchiki",
     "engines": {
         "vscode": "^1.19.0"
@@ -13,8 +13,13 @@
     "contributes": {
         "languages": [{
             "id": "laml",
-            "aliases": ["laml", "laml"],
-            "extensions": [".laml"],
+            "aliases": [
+                "laml",
+                "laml"
+            ],
+            "extensions": [
+                ".laml"
+            ],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
