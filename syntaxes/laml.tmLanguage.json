@@ -1,31 +1,49 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "laml",
-	"patterns": [
-		{
+	"patterns": [{
 			"include": "#keywords"
 		},
 		{
-			"include": "#strings"
+			"include": "#variables"
+		},
+		{
+			"include": "#entities"
 		}
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
-				"name": "keyword.control.laml",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.laml",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
+					"name": "entity.name.tag.laml",
+					"match": "((\\.|%)\\w+)"
+				},
 				{
-					"name": "constant.character.escape.laml",
-					"match": "\\\\."
+					"name": "comment.line.double-dash",
+					"match": "^[\\ \\t]*--(.*)"
+				}, {
+					"name": "keyword.other.laml",
+					"match": "\\\\\\\\"
+				},
+				{
+					"name": "keyword.other.laml",
+					"match": "&"
 				}
 			]
+		},
+		"variables": {
+			"patterns": [{
+				"name": "variable.language.laml",
+				"match": "#\\d+"
+			}]
+		},
+		"entities": {
+			"patterns": [{
+				"name": "keyword.control.laml",
+				"match": "\\\\newcommand"
+			}, {
+				"name": "entity.name.function.laml",
+				"match": "\\\\\\w+"
+			}]
 		}
 	},
 	"scopeName": "source.laml"
