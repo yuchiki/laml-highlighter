@@ -2,7 +2,7 @@
     "name": "laml-highlighter",
     "displayName": "laml-highlighter",
     "description": "This extension provides a syntax highlighter of laml code.",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "publisher": "yuchiki",
     "repository": {
         "url": "https://github.com/yuchiki/laml-highlighter"
@@ -14,20 +14,24 @@
         "Languages"
     ],
     "contributes": {
-        "languages": [{
-            "id": "laml",
-            "aliases": [
-                "lml"
-            ],
-            "extensions": [
-                ".laml"
-            ],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "laml",
-            "scopeName": "source.laml",
-            "path": "./syntaxes/laml.tmLanguage.json"
-        }]
+        "languages": [
+            {
+                "id": "laml",
+                "aliases": [
+                    "lml"
+                ],
+                "extensions": [
+                    ".laml"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "laml",
+                "scopeName": "source.laml",
+                "path": "./syntaxes/laml.tmLanguage.json"
+            }
+        ]
     }
 }
